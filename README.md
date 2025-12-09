@@ -1,153 +1,109 @@
-✈️ Análise de Atrasos de Voos — NYC Flights 2013
+<h2 align="center">📊 Sobre o Projeto</h2>
 
-Este projeto apresenta uma análise completa dos atrasos de voos que partiram de Nova York em 2013, utilizando o dataset NYC Flights 2013.
-O objetivo foi entender o comportamento dos atrasos, identificar padrões relevantes e destacar fatores que mais influenciam o desempenho das companhias aéreas, rotas e aeronaves.
+Este repositório traz uma análise exploratória completa sobre atrasos de voos nos EUA, utilizando técnicas de **EDA (Exploratory Data Analysis)** para entender padrões, tendências e fatores que influenciam atrasos.  
 
-📦 Tecnologias Utilizadas
+O foco foi transformar um grande volume de dados brutos em **insights acionáveis**, avaliando companhias aéreas, rotas, frequência de voos e proporção de atrasos.
 
-Python
+---
 
-Pandas
+<h2 align="center">🔎 Principais Insights Obtidos</h2>
 
-NumPy
+Durante a análise, conseguimos responder perguntas importantes sobre o comportamento dos atrasos. Aqui estão os destaques:
 
-Matplotlib
+---
 
-Jupyter Notebook
+<h3>📌 Qual é o tempo médio de atraso das companhias?</h3>
 
-📊 Metodologia da Análise
+A média geral encontrada foi de <strong>6.37 minutos</strong> por voo.
 
-A investigação seguiu quatro etapas principais:
+Companhias com média acima desse valor incluem:  
+<strong>9E, B6, EV, F9, FL, MQ, OO, WN e YV.</strong>
 
-Limpeza e tratamento dos dados
+---
 
-Remoção de valores nulos
+<h3>📌 Quais companhias realmente mais atrasam?</h3>
 
-Ajuste de tipos
+Existem três formas de analisar isso, e todas foram exploradas:
 
-Criação de variáveis derivadas (ex: route = origin-dest)
+<h4>1️⃣ Em quantidade absoluta de atrasos</h4>
 
-Análise quantitativa
+- **B6** — 17.588 atrasos  
+- **UA** — 16.717 atrasos  
+- **EV** — 15.498 atrasos  
 
-Médias, proporções, contagens, somas
+Essas são as que mais atrasam em números totais.
 
-Agrupamentos por companhia, rota e aeronave
+---
 
-Identificação de outliers e padrões numéricos
+<h4>2️⃣ Proporcionalmente (percentual dos voos que atrasam)</h4>
 
-Análise qualitativa e exploratória
+- **FL** — 61,2% dos voos atrasam  
+- **YV** — 56,8%  
+- **F9** — 56,2%  
 
-Interpretação dos resultados
+Essas são as "piores" no sentido de confiabilidade.
 
-Identificação de correlações práticas
+---
 
-Observação de tendências e possíveis motivos dos atrasos
+<h4>3️⃣ Entre as grandes companhias</h4>
 
-Visualizações
+- **EV** — 48% dos voos atrasam (pior entre as grandes)  
+- **DL** — 33,5% (uma das mais pontuais)
 
-Gráficos de barras, rankings e distribuições
+---
 
-Comparações entre companhias, rotas e aeronaves
+<h3>📌 As rotas influenciam nos atrasos?</h3>
 
-🛫 Principais Insights Obtidos
-🔸 Desempenho das companhias aéreas
+Sim! As rotas mostraram ser um fator relevante.
 
-A média geral de atrasos entre todas as companhias foi ≈ 6,37 minutos.
+As rotas mais problemáticas foram:
 
-Diversas empresas apresentaram atraso acima da média, como:
-9E, B6, EV, F9, FL, MQ, OO, WN, YV.
+- **EWR → GSO** — 212 min de atraso médio  
+- **EWR → CAE** — 77.86 min  
+- **EWR → CMH** — 68.75 min  
 
-Em termos absolutos, as companhias com maior número total de atrasos foram:
+Ou seja, voos saindo de **EWR** (Newark) apresentaram um padrão claro de maiores atrasos.
 
-B6 — 17.588 atrasos
+---
 
-UA — 16.717 atrasos
+<h2 align="center">📈 Como chegamos a essas conclusões?</h2>
 
-EV — 15.498 atrasos
+Utilizamos:
 
-Proporcionalmente, as empresas que mais atrasam são:
+- Agrupamentos por companhia aérea  
+- Estatísticas descritivas (médias, medianas e percentuais)  
+- Análise de volume total de voos  
+- Cálculo de atrasos proporcionais (atrasos ÷ total de voos)  
+- Identificação das rotas com maior média de atraso  
 
-FL (61,2%)
+O objetivo foi observar tanto o “todo” quanto a performance individual de cada companhia, evitando conclusões superficiais baseadas apenas em números absolutos.
 
-YV (56,8%)
+---
 
-F9 (56,2%)
+<h2 align="center">🛠️ Tecnologias utilizadas</h2>
 
-Entre as companhias grandes, a Delta (DL) demonstrou melhor regularidade com ~33,5% dos voos atrasando.
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" height="40" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" height="40" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" height="40" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" height="40" />
+</p>
 
-🔸 Rotas que mais sofrem atrasos
+---
 
-Foi criada a variável route = origin + "-" + dest e calculado o atraso médio de cada rota.
+<h2 align="center">📂 Estrutura do Repositório</h2>
+📁 data/ → Dataset utilizado
+📁 notebooks/ → Análises e visualizações
+📁 src/ → Scripts de limpeza e tratamento
+README.html → Este arquivo
 
-As rotas com maior atraso médio foram:
 
-Rota	Atraso médio (min)
-EWR-GSO	212.0
-EWR-CAE	77.9
-EWR-CMH	68.8
+---
 
-🔍 Observação importante: todas as rotas da lista começam no aeroporto EWR, indicando um forte padrão de atrasos para voos originados em Newark.
+<h2 align="center">✈️ Conclusão</h2>
 
-Além disso, analisando o volume total de voos por rota, foram identificadas rotas com baixo volume que podem distorcer médias — mas ainda assim, o comportamento do aeroporto permanece consistente.
+Este projeto mostrou que atrasos não acontecem por acaso eles seguem padrões claros ligados a companhia, volume de voos e principalmente **rotas específicas**.  
+A análise abriu caminho para estudos mais avançados, como previsões de atraso utilizando modelos de machine learning.
 
-🔸 Aeronaves que mais atrasam
 
-Agrupando por tailnum, identificamos aeronaves com:
-
-Maior atraso médio
-
-Maior quantidade de voos
-
-Maior soma total de atraso
-
-Algumas aeronaves apresentaram atrasos elevados por volume ou média, enquanto outras tiveram desempenho consistentemente positivo (médias negativas).
-
-Isso indica que problemas mecânicos, idade da aeronave ou rotas específicas podem estar influenciando.
-
-📈 Visualizações Implementadas
-
-O projeto inclui gráficos que mostram:
-
-Ranking de atraso médio por companhia
-
-Proporção de voos atrasados por companhia
-
-Rotas com maior atraso médio
-
-Comparações visuais entre aeroportos de origem
-
-Distribuições de atraso
-
-As visualizações foram criadas em Matplotlib, com estilo customizado para torná-las mais limpas e profissionais.
-
-🧭 Conclusões Gerais
-
-A análise permitiu identificar padrões claros:
-
-Algumas companhias são, de fato, mais suscetíveis a atrasos — seja por volume, operação ou características específicas.
-
-O aeroporto EWR tem um papel significativo nos atrasos, afetando múltiplas rotas independentemente da companhia.
-
-A aeronave utilizada também pode influenciar o atraso, sugerindo impactos de manutenção, performance ou histórico operacional.
-
-Esses resultados podem ajudar companhias aéreas, aeroportos e analistas a tomar decisões baseadas em dados, como revisar rotas críticas, ajustar escalas, aprimorar a manutenção de aeronaves ou redistribuir recursos.
-
-📁 Estrutura do Projeto
-📦 NYC-Flights-Analysis
- ┣ 📂 notebooks
- ┃ ┣ data_exploration.ipynb
- ┃ ┗ visualization.ipynb
- ┣ 📂 data
- ┃ ┗ df_clean.csv
- ┗ README.md
-
-🚀 Como Reproduzir
-
-Clone o repositório
-
-Instale as dependências
-
-pip install -r requirements.txt
-
-
-Abra os notebooks e explore a análise
